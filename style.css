@@ -1,0 +1,12 @@
+
+* {
+    font-family: 'Prompt', sans-serif;
+}
+
+
+.custom-image {
+    max-width: 70%; /* ขนาดรูปภาพจะไม่เกินความกว้างของ container */
+    height: auto; /* รักษาสัดส่วนของรูปภาพ */
+    width: auto\9; /* IE8 และ 9 */
+}
+
