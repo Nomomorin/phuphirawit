@@ -39,12 +39,18 @@
                       <li class="nav-item">
                           <a class="nav-link head-text text-color" href="../index.html#Portfolio">Portfolio</a> <!-- เปลี่ยนข้อความที่นี่ -->
                       </li>
+                      <li class="nav-item" id="lang-th">
+                        <a class="nav-link head-text text-color">English</a>
+                    </li>
+                    <li class="nav-item" id="lang-en">
+                        <a class="nav-link head-text text-color">ไทย</a>
+                    </li>
                   </ul>
               </div>
         </nav>
     </header>
 
-    <main class="container mt-4">
+    <main class="container mt-4" id="main-th">
         <h1>ยินดีต้อนรับสู่โปรเจ็คของฉัน</h1>
         <p>โปรเจ็คนี้เป็นเกี่ยวกับ การออกแบบและสร้างอุปกรณ์ควบคุมการเปิด - ปิดหลอดไฟ ประตู และหน้าต่างภายในบ้าน</p>
         <p>โปรเจ็คนี้จัดทำเพื่อลดเวลาหรือเพิ่มความสะดวกสะบายภายในบ้าน(ในที่นี้ยังคงเป็นแค่แบบจำลองเท่านั้น) โดยร่วมแล้วจะเป็นโครงงานมากกว่าหรือโปรเจ็คจบครับ ช่วงมัธยมต้นปี 3 ผมได้เลือกทำเกี่ยวกับ Arduino จะเห็นว่าเป็นของม.3 ซึ่งนานมากจึงไม่ค่อยมีรูปเท่าไหร่ครับ หากท่านใดสนใจสามารถติดต่อได้เลยนะครับ โครงงานนี้แสดงถึงว่าผมสามารถทำเกี่ยวกับ Arduino ได้</p>
@@ -59,6 +65,26 @@
             </li>
             <li>
                   ระบบสั่งเปิด-ปิดอุปกรณ์ภายในบ้านแบบจำลอง
+            </li>
+        </ul>
+        <img src="../public/image/m3/m3.png" class="card-img-top" alt="" srcset="">
+        <!-- เนื้อหาโปรเจ็คของคุณ -->
+    </main>
+    <main class="container mt-4" id="main-en">
+        <h1>Welcome to my project!</h1>
+        <p>This project is about Design and build devices to control turning on and off light bulbs, doors, and windows within the home.</p>
+        <p>This project is intended to reduce time or increase comfort in the home (here, it is only a model). Overall it is more of a project or finished project. During Mathayom 3, I chose to make something related to Arduino. You can see that it was for Mathayom 3. It's been a long time, so I don't have many pictures. If anyone is interested, you can contact me. This project shows what I can do with Arduino.</p>
+        <p>This project is only for children's play, during Mathayom 3, so the scale of the project is very small. You can watch the presentation clip on  <a href="https://www.youtube.com/watch?v=SGxAU9t2SCY">youtube</a> (Thai language) at minute 05:02. I will test the tool for you to see.</p>
+        <ul>
+            <p>Key components of the system include</p>
+            <li>
+                Data Transmission System Between Boards
+            </li>
+            <li>
+                Data Logging System for X, Y, Z Axes
+            </li>
+            <li>
+                Device Control System
             </li>
         </ul>
         <img src="../public/image/m3/m3.png" class="card-img-top" alt="" srcset="">
@@ -84,5 +110,39 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        if (localStorage.getItem("language") != "EN"){
+            if (localStorage.getItem("language") != "TH"){
+                localStorage.setItem("language","EN")
+            }
+        }
+        function change_lang(){
+            if(localStorage.getItem("language") == "EN"){
+                document.querySelectorAll('[id$="-th"]').forEach(element => {
+                    element.style.display = 'none';
+            });
+                document.querySelectorAll('[id$="-en"]').forEach(element => {
+                    element.style.display = 'block';
+            });
+            }else{
+                document.querySelectorAll('[id$="-en"]').forEach(element => {
+                    element.style.display = 'none';
+                });
+                document.querySelectorAll('[id$="-th"]').forEach(element => {
+                    element.style.display = 'block';
+                });
+            }
+        }
+        document.getElementById('lang-en').addEventListener('click', function (event) {
+            localStorage.setItem("language","TH")
+            location.reload();
+        })
+        document.getElementById('lang-th').addEventListener('click', function (event) {
+            localStorage.setItem("language","EN")
+            location.reload();
+        })
+
+        change_lang()
+</script>
 </body>
 </html>

@@ -39,12 +39,18 @@
                       <li class="nav-item">
                           <a class="nav-link head-text text-color" href="../index.html#Portfolio">Portfolio</a> <!-- เปลี่ยนข้อความที่นี่ -->
                       </li>
+                      <li class="nav-item" id="lang-th">
+                        <a class="nav-link head-text text-color">English</a>
+                    </li>
+                    <li class="nav-item" id="lang-en">
+                        <a class="nav-link head-text text-color">ไทย</a>
+                    </li>
                   </ul>
               </div>
         </nav>
     </header>
 
-    <main class="container mt-4">
+    <main class="container mt-4" id="main-th">
         <h1>ยินดีต้อนรับสู่โปรเจ็คของฉัน</h1>
         <p>โปรเจ็คนี้เป็นเกี่ยวกับ ระบบดึงข้อมูลจากบัตรประชาชน</p>
         <p>โปรเจ็คนี้จัดทำเพื่อลดเวลากรอกข้อมูลส่วนตัว เมื่อสถานที่ที่ต้องการข้อมูลส่วนตัวของผู้ใช้งานหรือลูกค้าอย่างเช่น โรงพยาบาล พัมนาด้วย python <br>(ข้อมูลส่วนตัวในหน้านี้ขออนุญาติปิดไว้นะครับ)</p>
@@ -85,6 +91,48 @@
         <p>ด้านล่างจะมีปุ่มยืนยันเมื่อต้องการส่งข้อมูลไปอีกฟอร์ม</p>
         <!-- เนื้อหาโปรเจ็คของคุณ -->
     </main>
+    <main class="container mt-4" id="main-en">
+        <h1>Welcome to my project! </h1>
+        <p> This project is about an ID card data extraction system.</p>
+        <p>t aims to reduce the time spent entering personal information when a location, such as a hospital, requires user or customer data. The project is developed using Python.<br> (Personal information on this page is intentionally omitted.)</p>
+        <ul>
+            <p>The core features of the system include:</p>
+            <li>
+                API for extracting data from ID cards.
+            </li>
+            <li>
+                API for displaying ID card information on a website.
+            </li>
+        </ul>
+        <ul>
+            <p>As the project evolved, additional features were added:</p>
+            <li>
+                Development of an executable file (exe) for easy installation and use.
+            </li>
+            <li>
+                System auto-start on machine boot, allowing the program to run without manual initiation.
+            </li>
+            <li>
+                Card data submission via a form.
+            </li>
+            <li>
+                Ability to specify a destination URL for sending the extracted data to another form.
+            </li>
+            <li>
+                Uninstallation feature.
+            </li>
+        </ul>
+        <img src="../public/image/Cid/Cid.png" class="card-img-top" alt="" srcset="">
+        <p>When the program is opened for the first time, it will prompt the user to enter the URL to which they want to send the extracted data.</p>
+        <img src="../public/image/Cid/Screenshot 2023-10-09 135052.png" class="card-img-top" alt="" srcset="">
+        <p> If a user accesses the specified website without entering an card, it will display a message indicating that the card is not found.</p>
+        <img src="../public/image/Cid/Screenshot 2023-10-09 135143.png" class="card-img-top" alt="" srcset="">
+        <p>Once the user accesses the specified website and enters the card, the program will indicate that the card has been detected and display a popup with the extracted information. </p>
+        <img src="../public/image/Cid/Screenshot 2023-10-09 135225.png" class="card-img-top" alt="" srcset="">
+        <p>At the bottom, there will be a confirmation button for sending the data to another form.</p>
+        <!-- เนื้อหาโปรเจ็คของคุณ -->
+    </main>
+
     <footer class="bg-dark text-white py-4 mt-5">
       <div class="container">
           <div class="row">
@@ -105,5 +153,39 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+            if (localStorage.getItem("language") != "EN"){
+                if (localStorage.getItem("language") != "TH"){
+                    localStorage.setItem("language","EN")
+                }
+            }
+            function change_lang(){
+                if(localStorage.getItem("language") == "EN"){
+                    document.querySelectorAll('[id$="-th"]').forEach(element => {
+                        element.style.display = 'none';
+                });
+                    document.querySelectorAll('[id$="-en"]').forEach(element => {
+                        element.style.display = 'block';
+                });
+                }else{
+                    document.querySelectorAll('[id$="-en"]').forEach(element => {
+                        element.style.display = 'none';
+                    });
+                    document.querySelectorAll('[id$="-th"]').forEach(element => {
+                        element.style.display = 'block';
+                    });
+                }
+            }
+            document.getElementById('lang-en').addEventListener('click', function (event) {
+                localStorage.setItem("language","TH")
+                location.reload();
+            })
+            document.getElementById('lang-th').addEventListener('click', function (event) {
+                localStorage.setItem("language","EN")
+                location.reload();
+            })
+
+            change_lang()
+    </script>
 </body>
 </html>

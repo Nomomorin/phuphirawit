@@ -39,12 +39,18 @@
                       <li class="nav-item">
                           <a class="nav-link head-text text-color" href="../index.html#Portfolio">Portfolio</a> <!-- เปลี่ยนข้อความที่นี่ -->
                       </li>
+                      <li class="nav-item" id="lang-th">
+                        <a class="nav-link head-text text-color">English</a>
+                    </li>
+                    <li class="nav-item" id="lang-en">
+                        <a class="nav-link head-text text-color">ไทย</a>
+                    </li>
                   </ul>
               </div>
         </nav>
     </header>
 
-    <main class="container mt-4">
+    <main class="container mt-4" id="main-th">
         <h1>ยินดีต้อนรับสู่โปรเจ็คของฉัน</h1>
         <p>โปรเจ็คนี้เป็นเกี่ยวกับ E-commerce</p>
         <p>โปรเจ็คนี้จัดทำให้เป็นเว็บไซต์ที่มีระบบ E-commerce ที่พัฒนาอยู่สามส่วนด้วยกันคือ frontend backend และ database อย่างแรก frontend เราพัฒนาด้วย framework Angular ส่วน backend พัฒนาด้วย framework NestJs ทั้งสอง framework ใช้ภาษา TypeScript (โปรเจ็คนี้พัฒนามานานแล้ว การดีไซน์จะไม่มีอะไรมากส่วนมากจะเน้นที่ระบบ)</p>
@@ -109,6 +115,72 @@
         <p>หน้าออเดอร์สินค้าสำหรับผู้ใช้</p>
         <!-- เนื้อหาโปรเจ็คของคุณ -->
     </main>
+
+    <main class="container mt-4" id="main-en">
+        <h1>Welcome to my project!</h1>
+        <p>This project is an E-commerce website</p>
+        <p> developed with three main components: frontend, backend, and database. The frontend is built using the Angular framework, while the backend is developed with the NestJs framework. Both frameworks use the TypeScript programming language. Although the project has been developed for a while, the design primarily focuses on system functionality.</p>
+        <ul>
+            <p>Key features of the system include:</p>
+            <li>
+                Login System: Allows users to log in to their accounts.
+            </li>
+            <li>
+                User Registration System: Enables users to create new accounts.
+            </li>
+            <li>
+                Token System: Checks whether users are logged in and prevents unauthorized access to specific pages, accessible only to administrators.
+            </li>
+            <li>
+                User Management for Admins: Admins can approve user registrations, delete users, and change user roles, such as promoting a user to admin.
+            </li>
+            <li>
+                Product Management for Admins: Admins can delete and edit product details.
+            </li>
+            <li>
+                Add Product for Admins: Admins can add new products with details such as name, description, category, price, quantity, and images.
+            </li>
+            <li>
+                Category Management for Admins: Admins can add, delete, and edit product categories.
+            </li>
+            <li>
+                Order Management: When customers place orders, they wait for approval from admins.
+            </li>
+            <li>
+                User-Facing Website Pages: Includes sections for recommended products, new arrivals, and product categories.
+            </li>
+            <li>
+                Product Selection and Details Page for Users: Users can choose products and view detailed information about each product.
+            </li>
+            <li>
+                Shopping Cart System: Users can add products to their shopping carts, and there's a page to view selected items.
+            </li>
+            <li>
+                Check-in System: Users can check in, and there's a page to view orders awaiting approval.
+            </li>
+        </ul>
+        <img src="../public/image/Ecommerce/e1.png" class="card-img-top" alt="" srcset="">
+        <p>Login Page</p>
+        <img src="../public/image/Ecommerce/Screenshot 2023-10-09 121801.png" class="card-img-top" alt="" srcset="">
+        <p>User Management Page for Admin</p>
+        <img src="../public/image/Ecommerce/Screenshot 2023-10-09 121836.png" class="card-img-top" alt="" srcset="">
+        <p>Product Management Page for Admin</p>
+        <img src="../public/image/Ecommerce/Screenshot 2023-10-09 121909.png" class="card-img-top" alt="" srcset="">
+        <p>Add Product Page for Admin</p>
+        <img src="../public/image/Ecommerce/Screenshot 2023-10-09 121934.png" class="card-img-top" alt="" srcset="">
+        <p>Category Management Page for Admin</p>
+        <img src="../public/image/Ecommerce/Screenshot 2023-10-09 122022.png" class="card-img-top" alt="" srcset="">
+        <p>Order Management Page for Admin</p>
+        <img src="../public/image/Ecommerce/Screenshot 2023-10-09 122103.png" class="card-img-top" alt="" srcset="">
+        <p>User-Facing Website</p>
+        <img src="../public/image/Ecommerce/Screenshot 2023-10-09 122155.png" class="card-img-top" alt="" srcset="">
+        <p>Product Details Page for Users</p>
+        <img src="../public/image/Ecommerce/Screenshot 2023-10-09 122242.png" class="card-img-top" alt="" srcset="">
+        <p>Shopping Cart Page for Users</p>
+        <img src="../public/image/Ecommerce/Screenshot 2023-10-09 122314.png" class="card-img-top" alt="" srcset="">
+        <p>Order Confirmation Page for Users</p>
+        <!-- เนื้อหาโปรเจ็คของคุณ -->
+    </main>
     <footer class="bg-dark text-white py-4 mt-5">
       <div class="container">
           <div class="row">
@@ -129,5 +201,39 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        if (localStorage.getItem("language") != "EN"){
+            if (localStorage.getItem("language") != "TH"){
+                localStorage.setItem("language","EN")
+            }
+        }
+        function change_lang(){
+            if(localStorage.getItem("language") == "EN"){
+                document.querySelectorAll('[id$="-th"]').forEach(element => {
+                    element.style.display = 'none';
+            });
+                document.querySelectorAll('[id$="-en"]').forEach(element => {
+                    element.style.display = 'block';
+            });
+            }else{
+                document.querySelectorAll('[id$="-en"]').forEach(element => {
+                    element.style.display = 'none';
+                });
+                document.querySelectorAll('[id$="-th"]').forEach(element => {
+                    element.style.display = 'block';
+                });
+            }
+        }
+        document.getElementById('lang-en').addEventListener('click', function (event) {
+            localStorage.setItem("language","TH")
+            location.reload();
+        })
+        document.getElementById('lang-th').addEventListener('click', function (event) {
+            localStorage.setItem("language","EN")
+            location.reload();
+        })
+
+        change_lang()
+</script>
 </body>
 </html>

@@ -39,12 +39,18 @@
                       <li class="nav-item">
                           <a class="nav-link head-text text-color" href="../index.html#Portfolio">Portfolio</a> <!-- เปลี่ยนข้อความที่นี่ -->
                       </li>
+                      <li class="nav-item" id="lang-th">
+                        <a class="nav-link head-text text-color">English</a>
+                    </li>
+                    <li class="nav-item" id="lang-en">
+                        <a class="nav-link head-text text-color">ไทย</a>
+                    </li>
                   </ul>
               </div>
         </nav>
     </header>
 
-    <main class="container mt-4">
+    <main class="container mt-4" id="main-th">
         <h1>ยินดีต้อนรับสู่โปรเจ็คของฉัน</h1>
         <p>โปรเจ็คนี้เป็นเกี่ยวกับ การออกแบบโปรแกรมเพื่อช่วยในการออกกำลังกายด้วย OpenCV</p>
         <p>โปรเจ็คนี้จัดทำเพื่อช่วยแนะนำท่าออกกำลังกายให้ถูกต้องด้วยท่าพื้นฐาน โดยร่วมแล้วจะเป็นโครงงานมากกว่าหรือโปรเจ็คจบครับ ช่วงมัธยมปลายปี 3 ผมได้เลือกทำเกี่ยวกับ OpenCv จะเห็นว่าเป็นของม.6อย่างงี้แต่ระบบเยอะเลยทีเดียว หากท่านใดสนใจสามารถติดต่อได้เลยนะครับ โครงงานนี้แสดงถึงว่าผมสามารถทำเกี่ยวกับ OpenCv ได้ <br>เนื่องจากช่วงม.6ผมต้องการให้มีคนใช้งานจริงๆผมจึงพัฒนาโปรแกรมในรูปแบบเว็บไซต์</p>
@@ -73,6 +79,35 @@
         <p>หน้าเว็บไซต์สำหรับผู้ใช้</p>
         <!-- เนื้อหาโปรเจ็คของคุณ -->
     </main>
+    <main class="container mt-4" id="main-en">
+        <h1>Welcome to my project!</h1>
+        <p>This project revolves around designing a program to assist with exercise using OpenCV. </p>
+        <p>The goal is to provide guidance on correct exercise postures based on basic postures. This project runs during Year 3 of High School and extends beyond the typical high school program. If you are interested, please get in touch. Since this project was in my early years, I aimed to develop a practical application. This led to the creation of web-based programs.</p>
+        <ul>
+            <p>Key components of the system include:</p>
+            <li>
+                User-Facing Website
+            </li>
+            <li>
+                Image Editing System using Mediapipe Model
+            </li>
+            <li>
+                Socket-based Website
+            </li>
+            <li>
+                Camera Activation System
+            </li>
+            <li>
+                Server-side Image Processing System
+            </li>
+            <li>
+                Real-time Pose Correction System
+            </li>
+        </ul>
+        <img src="../public/image/Exercise/368666535_810903760768689_6820865149277031753_n.jpg" class="card-img-top" alt="" srcset="">
+        <p>Website page for users</p>
+        <!-- เนื้อหาโปรเจ็คของคุณ -->
+    </main>
     <footer class="bg-dark text-white py-4 mt-5">
       <div class="container">
           <div class="row">
@@ -93,5 +128,39 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        if (localStorage.getItem("language") != "EN"){
+            if (localStorage.getItem("language") != "TH"){
+                localStorage.setItem("language","EN")
+            }
+        }
+        function change_lang(){
+            if(localStorage.getItem("language") == "EN"){
+                document.querySelectorAll('[id$="-th"]').forEach(element => {
+                    element.style.display = 'none';
+            });
+                document.querySelectorAll('[id$="-en"]').forEach(element => {
+                    element.style.display = 'block';
+            });
+            }else{
+                document.querySelectorAll('[id$="-en"]').forEach(element => {
+                    element.style.display = 'none';
+                });
+                document.querySelectorAll('[id$="-th"]').forEach(element => {
+                    element.style.display = 'block';
+                });
+            }
+        }
+        document.getElementById('lang-en').addEventListener('click', function (event) {
+            localStorage.setItem("language","TH")
+            location.reload();
+        })
+        document.getElementById('lang-th').addEventListener('click', function (event) {
+            localStorage.setItem("language","EN")
+            location.reload();
+        })
+
+        change_lang()
+</script>
 </body>
 </html>

@@ -71,6 +71,12 @@
                 <li class="nav-item">
                     <a class="nav-link head-text text-color" href="#Portfolio">Portfolio</a> <!-- เปลี่ยนข้อความที่นี่ -->
                 </li>
+                <li class="nav-item" id="lang-th">
+                    <a class="nav-link head-text text-color">English</a>
+                </li>
+                <li class="nav-item" id="lang-en">
+                    <a class="nav-link head-text text-color">ไทย</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -101,7 +107,7 @@
     </section>
     <hr class="mt-4 border-top" id="Services">
         <!-- Add the Services section -->
-        <section class="container mt-5" >
+        <section class="container mt-5" id="service-th">
             <div class="d-flex justify-content-center">
                 <h1 style="border-bottom: 5px solid #0099ff; border-radius: 5px;">Service</h1>
             </div>
@@ -137,6 +143,45 @@
                 </div>
             </div>
         </section>
+
+        <section class="container mt-5" id="service-en">
+            <div class="d-flex justify-content-center">
+                <h1 style="border-bottom: 5px solid #0099ff; border-radius: 5px;">Service</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mt-3 services-animation">
+                    <div class="align-self-start text-center">
+                        <i class="bi bi-hdd-rack fa-3x"></i> <!-- Add your service icon here -->
+                    </div>
+                    <h3 class="text-left h5">Database</h3>
+                    <p>Designing the data structure and database to suit the system's requirements.</p>
+                </div>
+                <div class="col-md-3 mt-3 services-animation">
+                    <div class="align-self-start text-center">
+                        <i class="bi bi-window-fullscreen fa-3x"></i><!-- Add your service icon here -->
+                    </div>
+                    <h3 class="text-left h5">Frontend</h3>
+                    <p>Designing and developing the user interface (UI).</p>
+                </div>
+                <div class="col-md-3 mt-3 services-animation">
+                    <div class="align-self-start text-center">
+                        <i class="bi bi-code-square fa-3x"></i> <!-- Add your service icon here -->
+                    </div>
+                    <h3 class="text-left h5">Backend</h3>
+                    <p>Designing and creating Application Programming Interfaces (APIs) for communication between the Frontend and Backend.</p>
+                </div>
+                <div class="col-md-3 mt-3 services-animation">
+                    <div class="align-self-start text-center">
+                        <i class="bi bi-tools fa-3x"></i> <!-- Add your service icon here -->
+                    </div>
+                    <h3 class="text-left h5">Custom Software Development</h3>
+                    <p>Creating programs and applications according to customer requirements. <br>
+                        Planning and developing software that aligns with the business or project needs of the customer.</p>
+                </div>
+            </div>
+        </section>
+
+
     <hr class="mt-4 border-top " id="Skills">
     <!-- Add the Skills section -->
     <section class="container mt-5" >
@@ -268,7 +313,7 @@
 
 
 <!-- Add the Portfolio section -->
-<section class="container mt-5" >
+<section class="container mt-5" id="portfolio-th">
     <div class="d-flex justify-content-center">
         <h1 style="border-bottom: 5px solid #0099ff; border-radius: 5px;">Portfolio</h1>
     </div>
@@ -327,7 +372,65 @@
         <!-- Add more Portfolio items as needed -->
     </div>
 </section>
+<section class="container mt-5" id="portfolio-en">
+    <div class="d-flex justify-content-center">
+        <h1 style="border-bottom: 5px solid #0099ff; border-radius: 5px;">Portfolio</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mt-3">
+            <div class="card rounded shadow">
+                <img src="public/image/Cid/Cid.png" class="card-img-top" alt="Portfolio Item 3">
+                <div class="card-body">
+                    <h5 class="card-title">System for Extracting Information from ID Cards</h5>
+                    <p class="card-text">This project is developed to reduce the time spent entering personal information when a location, such as a hospital, requires user or customer data.</p>
+                    <a href="project/CID.html" class="btn btn-outline-success float-right"><i class="bi bi-search"></i> More details</a> <!-- Add the View Details button -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-3">
+            <div class="card rounded shadow">
+                <img src="public\image\MedicineDispensingSystem\dosing_system_show.jpeg" class="card-img-top" alt="ระบบจ่ายยาโรงเรียนเลิงนกทา">
+                <div class="card-body">
+                    <h5 class="card-title">School Medication Dispensing System - Leang Nok Ta</h5>
+                    <p class="card-text">Developing a project for use in schools to reduce the time spent signing for medication. The system can record data in a database and generate reports in PDF format.</p>
+                    <a href="project/MedicineDispensingSystem.html" class="btn btn-outline-success float-right"><i class="bi bi-search"></i> More details</a> <!-- Add the View Details button -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-3">
+            <div class="card rounded shadow">
+                <img src="public/image/Ecommerce/e1.png" class="card-img-top" alt="Portfolio Item 3">
+                <div class="card-body">
+                    <h5 class="card-title">E-commerce Website</h5>
+                    <p class="card-text">This project involves creating a website with an E-commerce system developed using Angular and NestJs.</p>
+                    <a href="project/ecommerce.html" class="btn btn-outline-success float-right"><i class="bi bi-search"></i> More details</a> <!-- Add the View Details button -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-3">
+            <div class="card rounded shadow">
+                <img src="public/image/m6/m6.jpg" class="card-img-top" alt="Portfolio Item 3">
+                <div class="card-body">
+                    <h5 class="card-title">Program Design to Assist in Exercise using OpenCV</h5>
+                    <p class="card-text">This project aims to assist in recommending correct exercise postures through basic postures using OpenCV.</p>
+                    <a href="project/Exercise.html" class="btn btn-outline-success float-right"><i class="bi bi-search"></i> More details</a> <!-- Add the View Details button -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-3">
+            <div class="card rounded shadow">
+                <img src="public\image\m3\m3.png" class="card-img-top" alt="Portfolio Item 1">
+                <div class="card-body">
+                    <h5 class="card-title">Design and Creation of Home Automation Control System for Lights, Doors, and Windows</h5>
+                    <p class="card-text">This project involves the application of Arduino to control the opening and closing of lights, doors, and windows within a model home.</p>
+                    <a href="project/DesignAndConstructionOfControlEquipment.html" class="btn btn-outline-success float-right"><i class="bi bi-search"></i> More details</a> <!-- Add the View Details button -->
+                </div>
+            </div>
+        </div>
 
+        <!-- Add more Portfolio items as needed -->
+    </div>
+</section>
 
 
 <!-- Add the Footer section -->
@@ -392,6 +495,43 @@
         ScrollReveal().reveal('.nav-animation', {delay:50,origin:RandomP()});
         ScrollReveal().reveal('.rounded', {delay:50,origin:RandomP()});
         ScrollReveal().reveal('.services-animation', {delay:50,origin:RandomP()});
+        
+
+        if (localStorage.getItem("language") != "EN"){
+            if (localStorage.getItem("language") != "TH"){
+                localStorage.setItem("language","EN")
+            }
+        }
+
+        function change_lang(){
+            if(localStorage.getItem("language") == "EN"){
+            document.querySelectorAll('[id$="-th"]').forEach(element => {
+                element.style.display = 'none';
+            });
+            document.querySelectorAll('[id$="-en"]').forEach(element => {
+                element.style.display = 'block';
+            });
+            }else{
+                document.querySelectorAll('[id$="-en"]').forEach(element => {
+                    element.style.display = 'none';
+                });
+                document.querySelectorAll('[id$="-th"]').forEach(element => {
+                    element.style.display = 'block';
+                });
+            }
+        }
+
+        document.getElementById('lang-en').addEventListener('click', function (event) {
+            localStorage.setItem("language","TH")
+            location.reload();
+        })
+        document.getElementById('lang-th').addEventListener('click', function (event) {
+            localStorage.setItem("language","EN")
+            location.reload();
+        })
+
+        change_lang()
+
     </script>
 </body>
 </html>

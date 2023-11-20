@@ -39,12 +39,18 @@
                       <li class="nav-item">
                           <a class="nav-link head-text text-color" href="../index.html#Portfolio">Portfolio</a> <!-- เปลี่ยนข้อความที่นี่ -->
                       </li>
+                      <li class="nav-item" id="lang-th">
+                        <a class="nav-link head-text text-color">English</a>
+                    </li>
+                    <li class="nav-item" id="lang-en">
+                        <a class="nav-link head-text text-color">ไทย</a>
+                    </li>
                   </ul>
               </div>
         </nav>
     </header>
 
-    <main class="container mt-4">
+    <main class="container mt-4" id="main-th">
         <h1>ยินดีต้อนรับสู่โปรเจ็คของฉัน</h1>
         <p>โปรเจ็คนี้เป็นเกี่ยวกับ ระบบจ่ายยาโรงเรียนเลิงนกทา</p>
         <p>โปรเจ็คนี้จัดทำเพื่อใช้ในโรงเรียนลดเวลาในการลงชื่อจ่ายยา สามารถบันทึกข้อมูลฐานข้อมูลพัฒนาอยู่สามส่วนด้วยกันคือ frontend backend และ database อย่างแรก frontend เราพัฒนาด้วย framework Angular ส่วน backend พัฒนาด้วย framework NestJs ทั้งสอง framework ใช้ภาษา TypeScript </p>
@@ -74,9 +80,44 @@
         <img src="../public/image/MedicineDispensingSystem/4.jpeg" class="card-img-top" alt="" srcset="">
         <p>หน้าเว็บเพิ่มข้อมูลยา</p>
         <img src="../public/image/MedicineDispensingSystem/5.jpeg" class="card-img-top" alt="" srcset="">
-        <p>หน้าเว็บดูข้อมูลยาทั้ง</p>
+        <p>หน้าเว็บดูข้อมูลยาทั้งหมด</p>
         <img src="../public/image/MedicineDispensingSystem/6.jpeg" class="card-img-top" alt="" srcset="">
         <p>หน้าเว็บการจ่ายยา</p>
+        <!-- เนื้อหาโปรเจ็คของคุณ -->
+    </main>
+    <main class="container mt-4" id="main-en">
+        <h1>Welcome to my project!</h1>
+        <p>This project is about the Leang Nok Ta School Medication Dispensing System.</p>
+        <p> It is developed to streamline the process of medication distribution in schools, reducing the time spent on signing for medication. The system encompasses three main components: frontend, backend, and a database. The frontend is developed using the Angular framework, while the backend is built using the NestJs framework. Both frameworks utilize the TypeScript programming language.</p>
+        <ul>
+            <p>Key features of the system include:</p>
+            <li>
+                Student Information System (Add, Delete, Edit, View)
+            </li>
+            <li>
+                Medication Information System (Add, Delete, Edit, View)
+            </li>
+            <li>
+                Medication Dispensing History: The system keeps track of the history of medication dispensing. Users can export this data in both PDF and Excel formats.
+            </li>
+            <li>
+                Medication Dispensing System
+            </li>
+        </ul>
+        <img src="../public/image/MedicineDispensingSystem/dosing_system_show.jpeg" class="card-img-top" alt="" srcset="">
+        <p>The usage of the website will feature various menus for users to navigate</p>
+        <img src="../public/image/MedicineDispensingSystem/1.jpeg" class="card-img-top" alt="" srcset="">
+        <p>Add Student Information Page: This page allows users to input and add information about students.</p>
+        <img src="../public/image/MedicineDispensingSystem/2.jpeg" class="card-img-top" alt="" srcset="">
+        <p>View All Student Information Page: Users can access this page to view information about all students.</p>
+        <img src="../public/image/MedicineDispensingSystem/3.jpeg" class="card-img-top" alt="" srcset="">
+        <p>View Medication Dispensing History Page: This page displays the history of medication dispensing, and users can export this data in both PDF and Excel formats.</p>
+        <img src="../public/image/MedicineDispensingSystem/4.jpeg" class="card-img-top" alt="" srcset="">
+        <p>Add Medication Information Page: Users can input and add information about different medications on this page.</p>
+        <img src="../public/image/MedicineDispensingSystem/5.jpeg" class="card-img-top" alt="" srcset="">
+        <p>View All Medication Information Page: This page allows users to view information about all medications.</p>
+        <img src="../public/image/MedicineDispensingSystem/6.jpeg" class="card-img-top" alt="" srcset="">
+        <p>Medication Dispensing Page: This page is dedicated to the actual process of dispensing medication.</p>
         <!-- เนื้อหาโปรเจ็คของคุณ -->
     </main>
     <footer class="bg-dark text-white py-4 mt-5">
@@ -99,5 +140,39 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        if (localStorage.getItem("language") != "EN"){
+            if (localStorage.getItem("language") != "TH"){
+                localStorage.setItem("language","EN")
+            }
+        }
+        function change_lang(){
+            if(localStorage.getItem("language") == "EN"){
+                document.querySelectorAll('[id$="-th"]').forEach(element => {
+                    element.style.display = 'none';
+            });
+                document.querySelectorAll('[id$="-en"]').forEach(element => {
+                    element.style.display = 'block';
+            });
+            }else{
+                document.querySelectorAll('[id$="-en"]').forEach(element => {
+                    element.style.display = 'none';
+                });
+                document.querySelectorAll('[id$="-th"]').forEach(element => {
+                    element.style.display = 'block';
+                });
+            }
+        }
+        document.getElementById('lang-en').addEventListener('click', function (event) {
+            localStorage.setItem("language","TH")
+            location.reload();
+        })
+        document.getElementById('lang-th').addEventListener('click', function (event) {
+            localStorage.setItem("language","EN")
+            location.reload();
+        })
+
+        change_lang()
+</script>
 </body>
 </html>
